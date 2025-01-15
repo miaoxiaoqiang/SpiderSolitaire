@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B7C568B-654F-4986-9174-F99D64A972A7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SpiderSolitaire</RootNamespace>
+    <AssemblyName>SpiderSolitaire</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SpiderSolitaire.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MvvmLight">
+      <HintPath>..\packages\MvvmLight.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\packages\System.Windows.Interactivity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFGifPlay">
+      <HintPath>..\packages\WPFGifPlay.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AttachedProperty\AttachedProperties.cs" />
+    <Compile Include="Behaviors\CardMouseStatusBehavior.cs" />
+    <Compile Include="Behaviors\PopupBehavior.cs" />
+    <Compile Include="Components\CardControl.xaml.cs">
+      <DependentUpon>CardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CardItemsControl.cs" />
+    <Compile Include="Components\LabelCommandDecorator.cs" />
+    <Compile Include="Converters\ImageResourceKeyToImageConverter.cs" />
+    <Compile Include="Converters\LevelToCheckConverter.cs.cs" />
+    <Compile Include="Converters\SecondsToTimeConverter.cs" />
+    <Compile Include="Converters\ShowWinConverter.cs" />
+    <Compile Include="Core\Deck\BaseZone.cs" />
+    <Compile Include="Core\CardAnimation.cs" />
+    <Compile Include="Core\Deck\CardDeck.cs" />
+    <Compile Include="Core\CardOffestData.cs" />
+    <Compile Include="Core\Deck\CompletedZone.cs" />
+    <Compile Include="Core\Deck\GameZone.cs" />
+    <Compile Include="Core\ICardContext.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Localization\LocalizationHelper.cs" />
+    <Compile Include="Localization\en-US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\zh-TW.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>zh-TW.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CardStatus.cs" />
+    <Compile Include="Model\GameLevel.cs" />
+    <Compile Include="Model\Language.cs" />
+    <Compile Include="Model\Move.cs" />
+    <Compile Include="Model\PlayRecord.cs" />
+    <Compile Include="Utils\Helper.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Page Include="Components\CardControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\CardImageConverter.cs" />
+    <Compile Include="Core\Card\Card.cs" />
+    <Compile Include="Model\Suit.cs" />
+    <Compile Include="Model\CardNumber.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\Styles\CardImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\Fonts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="Resources\Fonts\icomoon.ttf" />
+    <Resource Include="Resources\Fonts\SVGfont.ttf" />
+    <None Include="SpiderSolitaire.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Card\2c.png" />
+    <Resource Include="Resources\Images\Card\2d.png" />
+    <Resource Include="Resources\Images\Card\2h.png" />
+    <Resource Include="Resources\Images\Card\2s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Card\1c.png" />
+    <Resource Include="Resources\Images\Card\1d.png" />
+    <Resource Include="Resources\Images\Card\1h.png" />
+    <Resource Include="Resources\Images\Card\1s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Card\3c.png" />
+    <Resource Include="Resources\Images\Card\3d.png" />
+    <Resource Include="Resources\Images\Card\3h.png" />
+    <Resource Include="Resources\Images\Card\3s.png" />
+    <Resource Include="Resources\Images\Card\4c.png" />
+    <Resource Include="Resources\Images\Card\4d.png" />
+    <Resource Include="Resources\Images\Card\4h.png" />
+    <Resource Include="Resources\Images\Card\4s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Card\5c.png" />
+    <Resource Include="Resources\Images\Card\5d.png" />
+    <Resource Include="Resources\Images\Card\5h.png" />
+    <Resource Include="Resources\Images\Card\5s.png" />
+    <Resource Include="Resources\Images\Card\6c.png" />
+    <Resource Include="Resources\Images\Card\6d.png" />
+    <Resource Include="Resources\Images\Card\6h.png" />
+    <Resource Include="Resources\Images\Card\6s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Card\7c.png" />
+    <Resource Include="Resources\Images\Card\7d.png" />
+    <Resource Include="Resources\Images\Card\7h.png" />
+    <Resource Include="Resources\Images\Card\7s.png" />
+    <Resource Include="Resources\Images\Card\8c.png" />
+    <Resource Include="Resources\Images\Card\8d.png" />
+    <Resource Include="Resources\Images\Card\8h.png" />
+    <Resource Include="Resources\Images\Card\8s.png" />
+    <Resource Include="Resources\Images\Card\9c.png" />
+    <Resource Include="Resources\Images\Card\9d.png" />
+    <Resource Include="Resources\Images\Card\9h.png" />
+    <Resource Include="Resources\Images\Card\9s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Card\10c.png" />
+    <Resource Include="Resources\Images\Card\10d.png" />
+    <Resource Include="Resources\Images\Card\10h.png" />
+    <Resource Include="Resources\Images\Card\10s.png" />
+    <Resource Include="Resources\Images\Card\11c.png" />
+    <Resource Include="Resources\Images\Card\11d.png" />
+    <Resource Include="Resources\Images\Card\11h.png" />
+    <Resource Include="Resources\Images\Card\11s.png" />
+    <Resource Include="Resources\Images\Card\12c.png" />
+    <Resource Include="Resources\Images\Card\12d.png" />
+    <Resource Include="Resources\Images\Card\12h.png" />
+    <Resource Include="Resources\Images\Card\12s.png" />
+    <Resource Include="Resources\Images\Card\13c.png" />
+    <Resource Include="Resources\Images\Card\13d.png" />
+    <Resource Include="Resources\Images\Card\13h.png" />
+    <Resource Include="Resources\Images\Card\13s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Card\cardback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\base_foundation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\base.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\FourSuits.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Highlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\menubcg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\cn.png" />
+    <Resource Include="Resources\Images\us.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\OneSuit.png" />
+    <Resource Include="Resources\Images\TwoSuits.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\glow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\cssloading.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\AddScore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\win.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\buttonbcgh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\buttonbcg.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\zh-TW.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>zh-TW.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,132 @@
+﻿<UserControl x:Class="SpiderSolitaire.Components.CardControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SpiderSolitaire.Components"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ic="clr-namespace:MvvmLight.Command;assembly=MvvmLight"
+             xmlns:customcomponents="clr-namespace:SpiderSolitaire.Components"
+             xmlns:customconverter="clr-namespace:SpiderSolitaire.Converters"
+             xmlns:customattachedproperty="clr-namespace:SpiderSolitaire.AttachedProperty"
+             xmlns:custombehavior="clr-namespace:SpiderSolitaire.Behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="182" d:DesignWidth="135">
+
+    <UserControl.Style>
+        <Style TargetType="UserControl">
+            <Setter Property="customcomponents:CardControl.CardStatus" Value="{Binding CardStatus, Mode=OneWay}"/>
+            <Setter Property="customcomponents:CardControl.ShowFront" Value="{Binding ShowFront, Mode=TwoWay}"/>
+            <Setter Property="customcomponents:CardControl.CanHover" Value="{Binding CanHover, Mode=OneWay}"/>
+            <Setter Property="Canvas.Left" Value="{Binding Left, Mode=TwoWay}"/>
+            <Setter Property="Canvas.Top" Value="{Binding Top, Mode=TwoWay}"/>
+            <Setter Property="Canvas.ZIndex" Value="{Binding ZIndex, Mode=TwoWay}"/>
+            <Setter Property="Width" Value="135"/>
+            <Setter Property="Height" Value="182"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="UserControl">
+                        <Grid x:Name="cardGrid">
+                            <Border Background="{StaticResource HighLight}"
+                                    CornerRadius="10"
+                                    SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="HighQuality"
+                                    x:Name="MouseDowmHighLight"
+                                    Visibility="Collapsed">
+                                <Border.Effect>
+                                    <DropShadowEffect Direction="320" BlurRadius="6" ShadowDepth="35" Color="Black" Opacity="0.7" />
+                                </Border.Effect>
+                            </Border>
+                            <Border Background="{StaticResource Hover}"
+                                    CornerRadius="10"
+                                    Width="124" Height="170"
+                                    SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="HighQuality"
+                                    x:Name="MouseHoverHighLight"
+                                    Visibility="Collapsed"/>
+                            <Image x:Name="ImageFrontCard"
+                                   Stretch="Uniform" StretchDirection="Both"
+                                   Width="117" Height="164"
+                                   RenderTransformOrigin="0.5,0.5"
+                                   SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="HighQuality">
+                                <Image.Source>
+                                    <MultiBinding Converter="{x:Static customconverter:CardImageConverter.Instance}" Mode="OneWay">
+                                        <Binding Path="Suit" Mode="OneWay"/>
+                                        <Binding Path="CardNumber" Mode="OneWay"/>
+                                    </MultiBinding>
+                                </Image.Source>
+                                <Image.RenderTransform>
+                                    <TransformGroup x:Name="tfg1">
+                                        <ScaleTransform x:Name="tfgst1" ScaleX="{Binding ScaleFront, Mode=OneWay}"/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                                <Image.Clip>
+                                    <RectangleGeometry RadiusX="9" RadiusY="9" Rect="0, 0, 117, 164"/>
+                                </Image.Clip>
+                            </Image>
+                            <Image x:Name="ImageCard"
+                                   Stretch="Uniform" StretchDirection="Both"
+                                   Width="117" Height="164"
+                                   Source="{StaticResource CardBack}"
+                                   RenderTransformOrigin="0.5,0.5"
+                                   SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="HighQuality">
+                                <Image.RenderTransform>
+                                    <TransformGroup x:Name="tfg">
+                                        <ScaleTransform x:Name="tfgst" ScaleX="{Binding ScaleBack, Mode=OneWay}"/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                                <Image.Clip>
+                                    <RectangleGeometry RadiusX="9" RadiusY="9" Rect="0, 0, 117, 164"/>
+                                </Image.Clip>
+                            </Image>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <DataTrigger Binding="{Binding IsSelected, Mode=OneWay}" Value="True">
+                                <Setter TargetName="MouseHoverHighLight" Property="Visibility" Value="Collapsed"/>
+                                <Setter TargetName="MouseDowmHighLight" Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                            <Trigger Property="customcomponents:CardControl.CardStatus" Value="Residue">
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                            <Trigger Property="customcomponents:CardControl.CardStatus" Value="MoveBack">
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                            <Trigger Property="customcomponents:CardControl.CardStatus" Value="DealFront">
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                            <Trigger Property="customcomponents:CardControl.CardStatus" Value="MoveTarget">
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                            <Trigger Property="customcomponents:CardControl.CardStatus" Value="Keeping">
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Style>
+    <UserControl.RenderTransform>
+        <TransformGroup>
+            <TranslateTransform />
+        </TransformGroup>
+    </UserControl.RenderTransform>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="PreviewMouseLeftButtonDown">
+            <ic:EventToCommand PassEventArgsToCommand="True"
+                               Command="{Binding DataContext.CardMouseDownCommand, Mode=OneWay, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
+            <ic:EventToCommand PassEventArgsToCommand="True"
+                               Command="{Binding DataContext.CardMouseUpCommand, Mode=OneWay, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="PreviewMouseMove">
+            <ic:EventToCommand PassEventArgsToCommand="True"
+                               Command="{Binding DataContext.CardMouseMoveCommand, Mode=OneWay, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <i:Interaction.Behaviors>
+        <custombehavior:CardMouseStatusBehavior/>
+    </i:Interaction.Behaviors>
+</UserControl>

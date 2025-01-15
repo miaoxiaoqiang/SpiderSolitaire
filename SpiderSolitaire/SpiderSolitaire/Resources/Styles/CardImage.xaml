@@ -1,0 +1,133 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <BitmapImage x:Key="CardBack"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/cardback.png"/>
+    
+    <BitmapImage x:Key="SpadeCardA"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/1s.png"/>
+    <BitmapImage x:Key="SpadeCard2"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/2s.png"/>
+    <BitmapImage x:Key="SpadeCard3"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/3s.png"/>
+    <BitmapImage x:Key="SpadeCard4"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/4s.png"/>
+    <BitmapImage x:Key="SpadeCard5"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/5s.png" />
+    <BitmapImage x:Key="SpadeCard6"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/6s.png"/>
+    <BitmapImage x:Key="SpadeCard7"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/7s.png"/>
+    <BitmapImage x:Key="SpadeCard8"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/8s.png"/>
+    <BitmapImage x:Key="SpadeCard9"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/9s.png"/>
+    <BitmapImage x:Key="SpadeCard10"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/10s.png" />
+    <BitmapImage x:Key="SpadeCardJ"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/11s.png"/>
+    <BitmapImage x:Key="SpadeCardQ"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/12s.png"/>
+    <BitmapImage x:Key="SpadeCardK"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/13s.png"/>
+
+    <BitmapImage x:Key="HeartCardA"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/1h.png"/>
+    <BitmapImage x:Key="HeartCard2"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/2h.png"/>
+    <BitmapImage x:Key="HeartCard3"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/3h.png"/>
+    <BitmapImage x:Key="HeartCard4"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/4h.png"/>
+    <BitmapImage x:Key="HeartCard5"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/5h.png"/>
+    <BitmapImage x:Key="HeartCard6"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/6h.png"/>
+    <BitmapImage x:Key="HeartCard7"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/7h.png"/>
+    <BitmapImage x:Key="HeartCard8"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/8h.png"/>
+    <BitmapImage x:Key="HeartCard9"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/9h.png"/>
+    <BitmapImage x:Key="HeartCard10"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/10h.png"/>
+    <BitmapImage x:Key="HeartCardJ"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/11h.png"/>
+    <BitmapImage x:Key="HeartCardQ"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/12h.png"/>
+    <BitmapImage x:Key="HeartCardK"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/13h.png"/>
+
+    <BitmapImage x:Key="DiamondCardA"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/1d.png"/>
+    <BitmapImage x:Key="DiamondCard2"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/2d.png"/>
+    <BitmapImage x:Key="DiamondCard3"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/3d.png"/>
+    <BitmapImage x:Key="DiamondCard4"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/4d.png"/>
+    <BitmapImage x:Key="DiamondCard5"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/5d.png"/>
+    <BitmapImage x:Key="DiamondCard6"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/6d.png"/>
+    <BitmapImage x:Key="DiamondCard7"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/7d.png"/>
+    <BitmapImage x:Key="DiamondCard8"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/8d.png"/>
+    <BitmapImage x:Key="DiamondCard9"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/9d.png"/>
+    <BitmapImage x:Key="DiamondCard10"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/10d.png"/>
+    <BitmapImage x:Key="DiamondCardJ"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/11d.png"/>
+    <BitmapImage x:Key="DiamondCardQ"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/12d.png"/>
+    <BitmapImage x:Key="DiamondCardK"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/13d.png"/>
+
+    <BitmapImage x:Key="ClubCardA"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/1c.png" />
+    <BitmapImage x:Key="ClubCard2"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/2c.png"/>
+    <BitmapImage x:Key="ClubCard3"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/3c.png"/>
+    <BitmapImage x:Key="ClubCard4"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/4c.png"/>
+    <BitmapImage x:Key="ClubCard5"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/5c.png"/>
+    <BitmapImage x:Key="ClubCard6"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/6c.png"/>
+    <BitmapImage x:Key="ClubCard7"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/7c.png"/>
+    <BitmapImage x:Key="ClubCard8"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/8c.png"/>
+    <BitmapImage x:Key="ClubCard9"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/9c.png"/>
+    <BitmapImage x:Key="ClubCard10"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/10c.png"/>
+    <BitmapImage x:Key="ClubCardJ"
+               UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/11c.png"/>
+    <BitmapImage x:Key="ClubCardQ"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/12c.png"/>
+    <BitmapImage x:Key="ClubCardK"
+                UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/Card/13c.png"/>
+
+    <ImageBrush x:Key="HighLight"
+                ImageSource="/Resources/Images/Highlight.png"
+                RenderOptions.BitmapScalingMode="HighQuality" TileMode="None" Stretch="None"/>
+    <ImageBrush x:Key="Hover"
+                ImageSource="/Resources/Images/glow.png"
+                RenderOptions.BitmapScalingMode="HighQuality" TileMode="None" Stretch="Uniform"/>
+
+    <BitmapImage x:Key="BaseFoundation" UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/base_foundation.png" />
+    <BitmapImage x:Key="Base" UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/base.png" />
+    <BitmapImage x:Key="FourSuits" UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/FourSuits.png" />
+    <BitmapImage x:Key="TwoSuits" UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/TwoSuits.png" />
+    <BitmapImage x:Key="OneSuit" UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/OneSuit.png" />
+
+    <BitmapImage x:Key="ZH_CN" UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/cn.png" />
+    <BitmapImage x:Key="US" UriSource="pack://application:,,,/SpiderSolitaire;component/Resources/Images/us.png" />
+
+    <ImageBrush x:Key="buttonhover" ImageSource="/resources/Images/buttonbcgh.png" Stretch="Fill"/>
+    <ImageBrush x:Key="buttonnohover" ImageSource="/resources/Images/buttonbcg.png" Stretch="Fill"/>
+</ResourceDictionary>
